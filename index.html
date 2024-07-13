@@ -7,141 +7,64 @@
     <style>
         body {
             background-color: black;
-            font-family: Arial, sans-serif;
             color: white;
-            margin: 0;
-            padding: 0;
-        }
-        .header-container {
-            position: fixed;
-            top: 0;
-            width: 99.6%;
-            background-color: black;
-            z-index: 10;
-        }
-        .header {
-            text-align: center;
-            padding: 10px;
-            font-size: 24px;
-        }
-        .slider {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            overflow-y: auto;
-            height: 80vh;
-            padding: 20px;
-            margin-top: 80px;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
         }
-        .row {
-            display: flex;
-            width: 100%;
+        #loading {
+            font-size: 3em;
+            position: absolute;
+            transition: opacity 1s;
+        }
+        #buttons {
+            display: none;
+            flex-wrap: wrap;
             justify-content: center;
         }
-        .box {
-            width: 30%;
-            background-color: gray;
-            margin: 10px;
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .box img {
-            width: 725px; /* Set width to 750 pixels */
-            height: 400px; /* Set height to 400 pixels */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
-            border-radius: 10px;
-            display: block;
-        }
-        .info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 5px;
-        }
-        .info span {
-            font-size: 18px;
-        }
-        .info button {
-            padding: 10px 20px;
-            background-color: #007bff;
+        .button {
+            background-color: #262626;
             color: white;
             border: none;
-            border-radius: 5px;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em;
             cursor: pointer;
-            font-size: 16px;
         }
-        .info button:hover {
-            background-color: #0056b3;
+        audio {
+            display: none; /* Hide the audio player */
         }
     </style>
 </head>
 <body>
 
-<div class="header-container">
-    <div class="header">loadstring.lol</div>
-</div>
+    <audio id="background-music" autoplay loop>
+        <source src="web-index-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
 
-<div class="slider">
-    <div class="header">Executors</div>
-    
-    <div class="row">
-        <div class="box">
-            <img src="https://raw.githubusercontent.com/4Cafes/scriptsite/main/Screenshot%202024-07-12%20194352%20(1).png" alt="Showcase Image">
-            <div class="info">
-                <span>Wave Executor - FREE</span>
-                <button>Get</button>
-            </div>
-        </div>
-        <div class="box">
-            <img src="https://raw.githubusercontent.com/4Cafes/scriptsite/main/Screenshot%202024-07-12%20194220.png" alt="Showcase Image">
-            <div class="info">
-                <span>Solara Executor - FREE</span>
-                <button>Get</button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="header">Da Hood - Free</div>
-    
-    <div class="row">
-        <div class="box">
-            <img src="https://raw.githubusercontent.com/4Cafes/scriptsite/main/maxresdefault.jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Azure Modded - Da Hood</span>
-                <button>Get</button>
-            </div>
-        </div>
-        <div class="box">
-            <img src="https://raw.githubusercontent.com/4Cafes/scriptsite/main/-gxbsXongON-image.jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Nyula Script - Da Hood</span>
-                <button>Get</button>
-            </div>
-        </div>
+    <div id="loading">loadstring.lol</div>
+    <div id="buttons">
+        <button class="button" onclick="window.location.href='https://loadstring.lol/executor'">Executors</button>
+        <button class="button" onclick="window.location.href='https://loadstring.lol/dahood'">Da Hood</button>
+        <button class="button" onclick="window.location.href='https://loadstring.lol'">Soon!</button>
+        <button class="button" onclick="window.location.href='https://loadstring.lol'">Soon!</button>
+        <button class="button" onclick="window.location.href='https://loadstring.lol'">Soon!</button>
+        <button class="button" onclick="window.location.href='https://cafes.lol'">cafes.lol</button>
     </div>
 
-    <div class="header">Da Hood - Paid</div>
-
-    <div class="row">
-        <div class="box">
-            <img src="https://raw.githubusercontent.com/4Cafes/scriptsite/main/maxresdefault%20(1).jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Drax Script - Best Paid</span>
-                <button>Get</button>
-            </div>
-        </div>
-        <div class="box">
-            <img src="https://raw.githubusercontent.com/4Cafes/scriptsite/main/maxresdefault%20(2).jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Juju.lol Script - Most Options</span>
-                <button>Get</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+    <script>
+        setTimeout(() => {
+            document.getElementById('loading').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('buttons').style.display = 'flex';
+            }, 1000);
+        }, 2000);
+    </script>
+    
 </body>
 </html>

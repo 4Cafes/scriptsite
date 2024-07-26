@@ -11,6 +11,7 @@
             color: white;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Prevent scrolling while loading screen is visible */
         }
         .header-container {
             position: fixed;
@@ -49,9 +50,9 @@
             text-align: center;
         }
         .box img {
-            width: 500px; /* Set width to 750 pixels */
-            height: 400px; /* Set height to 400 pixels */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
+            width: 500px;
+            height: 400px;
+            object-fit: cover;
             border-radius: 10px;
             display: block;
         }
@@ -76,34 +77,68 @@
         .info button:hover {
             background-color: #0056b3;
         }
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            font-size: 3em;
+            transition: opacity 1s ease-out;
+        }
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none; /* Disable interaction with the loading screen */
+        }
     </style>
 </head>
 <body>
 
-<div class="header-container">
-    <div class="header"><a href="https://loadstring.lol">loadstring.lol</a></div>
-</div>
+    <!-- Loading Screen -->
+    <div id="loading-screen">erlc scripts coming you way pronto</div>
 
-<div class="slider">
-    <div class="header">ERLC - Free Scripts</div>
-    
-    <div class="row">
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/erlc/erlc.jpg" alt="Showcase Image">
-            <div class="info">
-                <span>DEP Hub - Only esp and speed - .gg/dephub</span>
-                <button onclick="window.location.href='https://loadstring.lol/scripts/erlc/dephub.lua'">Get</button>
+    <!-- Main Content -->
+    <div class="header-container">
+        <div class="header"><a href="https://loadstring.lol" style="color: white; text-decoration: none;">loadstring.lol</a></div>
+    </div>
+
+    <div class="slider">
+        <div class="header">ERLC - Free Scripts</div>
+        
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/erlc/erlc.jpg" alt="Showcase Image">
+                <div class="info">
+                    <span>DEP Hub - Only esp and speed - .gg/dephub</span>
+                    <button onclick="window.location.href='https://loadstring.lol/scripts/erlc/dephub.lua'">Get</button>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/erlc/brizzy.png" alt="Showcase Image">
-            <div class="info">
-                <span>Brizzy.lol - Being Rewriten</span>
-                <button onclick="window.location.href='https://brizzy.lol'">Get</button>
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/erlc/brizzy.png" alt="Showcase Image">
+                <div class="info">
+                    <span>Brizzy.lol - Being Rewriten</span>
+                    <button onclick="window.location.href='https://brizzy.lol'">Get</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            setTimeout(function() {
+                loadingScreen.classList.add('hidden');
+                document.body.style.overflow = ''; // Re-enable scrolling after loading screen hides
+            }, 2000); // Adjust the duration of the loading screen here
+        });
+    </script>
 
 </body>
 </html>

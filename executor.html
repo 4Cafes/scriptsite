@@ -11,6 +11,7 @@
             color: white;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Prevent scrolling while loading screen is visible */
         }
         .header-container {
             position: fixed;
@@ -76,50 +77,84 @@
         .info button:hover {
             background-color: #0056b3;
         }
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            font-size: 3em;
+            transition: opacity 1s ease-out;
+        }
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none; /* Disable interaction with the loading screen */
+        }
     </style>
 </head>
 <body>
 
-<div class="header-container">
-    <div class="header"><a href="https://loadstring.lol">loadstring.lol</a></div>
-</div>
+    <!-- Loading Screen -->
+    <div id="loading-screen">byfron bypasses incoming</div>
 
-<div class="slider">
-    <div class="header">Executors - Free</div>
-    
-    <div class="row">
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/executor/Screenshot%202024-07-12%20194220.png" alt="Showcase Image">
-            <div class="info">
-                <span>Solara Executor - The Best - Keyless</span>
-                <button onclick="window.location.href='https://discord.gg/realsolara'">Get</button>
+    <!-- Main Content -->
+    <div class="header-container">
+        <div class="header"><a href="https://loadstring.lol" style="color: white; text-decoration: none;">loadstring.lol</a></div>
+    </div>
+
+    <div class="slider">
+        <div class="header">Executors - Free</div>
+        
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/executor/Screenshot%202024-07-12%20194220.png" alt="Showcase Image">
+                <div class="info">
+                    <span>Solara Executor - The Best - Keyless</span>
+                    <button onclick="window.location.href='https://discord.gg/realsolara'">Get</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/executor/Screenshot%202024-07-12%20194352%20(1).png" alt="Showcase Image">
+                <div class="info">
+                    <span>Wave Executor - Better but Detected - Key</span>
+                    <button onclick="window.location.href='https://getwave.gg'">Get</button>
+                </div>
             </div>
         </div>
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/executor/Screenshot%202024-07-12%20194352%20(1).png" alt="Showcase Image">
-            <div class="info">
-                <span>Wave Executor - Better but Detected - Key</span>
-                <button onclick="window.location.href='https://getwave.gg'">Get</button>
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/executor/celery.jpg" alt="Showcase Image">
+                <div class="info">
+                    <span>Celery - Not Working - Keyless</span>
+                    <button onclick="window.location.href='https://discord.gg/celery'">Get</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
+                <div class="info">
+                    <span>Suggest a executor!</span>
+                    <button onclick="window.location.href='https://xk5vzquj.forms.app/untitled-form-1'">Get</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/executor/celery.jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Celery - Not Working - Keyless</span>
-                <button onclick="window.location.href='https://discord.gg/celery'">Get</button>
-            </div>
-        </div>
-        <div class="box">
-            <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
-            <div class="info">
-                <span>Suggest a executor!</span>
-                <button onclick="window.location.href='https://xk5vzquj.forms.app/untitled-form-1'">Get</button>
-            </div>
-        </div>
-    </div>
-</div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            setTimeout(function() {
+                loadingScreen.classList.add('hidden');
+                document.body.style.overflow = ''; // Re-enable scrolling after loading screen hides
+            }, 2000); // Adjust the duration of the loading screen here
+        });
+    </script>
 
 </body>
 </html>

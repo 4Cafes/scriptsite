@@ -11,6 +11,7 @@
             color: white;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Prevent scrolling while loading screen is visible */
         }
         .header-container {
             position: fixed;
@@ -76,75 +77,109 @@
         .info button:hover {
             background-color: #0056b3;
         }
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            font-size: 3em;
+            transition: opacity 1s ease-out;
+        }
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none; /* Disable interaction with the loading screen */
+        }
     </style>
 </head>
 <body>
 
-<div class="header-container">
-    <div class="header"><a href="https://loadstring.lol">loadstring.lol</a></div>
-</div>
+    <!-- Loading Screen -->
+    <div id="loading-screen">best 2 tap scripts loading asap</div>
 
-<div class="slider">
-    <div class="header">Da Hood - Free</div>
-    
-    <div class="row">
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/dahood/maxresdefault.jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Azure Modded - Da Hood</span>
-                <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/azuremodded.lua'">Get</button>
+    <!-- Main Content -->
+    <div class="header-container">
+        <div class="header"><a href="https://loadstring.lol" style="color: white; text-decoration: none;">loadstring.lol</a></div>
+    </div>
+
+    <div class="slider">
+        <div class="header">Da Hood - Free</div>
+        
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/dahood/maxresdefault.jpg" alt="Showcase Image">
+                <div class="info">
+                    <span>Azure Modded - Da Hood</span>
+                    <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/azuremodded.lua'">Get</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/dahood/-gxbsXongON-image.jpg" alt="Showcase Image">
+                <div class="info">
+                    <span>Nyula Script - Da Hood</span>
+                    <button onclick="window.location.href='https://loadstring.lol/scripts/dahood/nyula.lua'">Get</button>
+                </div>
             </div>
         </div>
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/dahood/-gxbsXongON-image.jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Nyula Script - Da Hood</span>
-                <button onclick="window.location.href='https://loadstring.lol/scripts/dahood/nyula.lua'">Get</button>
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/dahood/vortex.png" alt="Showcase Image">
+                <div class="info">
+                    <span>Vortex Script - Da Hood</span>
+                    <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/vortex.lua'">Get</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
+                <div class="info">
+                    <span>Submit a script! (Does not have to be this category this is in)</span>
+                    <button onclick="window.location.href='https://xk5vzquj.forms.app/untitled-form'">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">Da Hood - Paid</div>
+
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/dahood/maxresdefault%20(2).jpg" alt="Showcase Image">
+                <div class="info">
+                    <span>Juju.lol Script - Most Options</span>
+                    <button onclick="window.location.href='https://www.juju.lol'">Get</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header">Da Hood - Source</div>
+        
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/dahood/maxresdefault%20(1).jpg" alt="Showcase Image">
+                <div class="info">
+                    <span>Drax Script - Best Of Them All</span>
+                    <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/drax.lua'">Source</button>
+                    <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/draxloadstring.lua'">Loadstring</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/dahood/vortex.png" alt="Showcase Image">
-            <div class="info">
-                <span>Vortex Script - Da Hood</span>
-                <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/vortex.lua'">Get</button>
-            </div>
-        </div>
-        <div class="box">
-            <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
-            <div class="info">
-                <span>Submit a script! (Does not have to be this category this is in)</span>
-                <button onclick="window.location.href='https://xk5vzquj.forms.app/untitled-form'">Submit</button>
-            </div>
-        </div>
-    </div>
 
-    <div class="header">Da Hood - Paid</div>
-
-    <div class="row">
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/dahood/maxresdefault%20(2).jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Juju.lol Script - Most Options</span>
-                <button onclick="window.location.href='https://www.juju.lol'">Get</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="header">Da Hood - Source</div>
-    
-    <div class="row">
-        <div class="box">
-            <img src="https://loadstring.lol/pictures/dahood/maxresdefault%20(1).jpg" alt="Showcase Image">
-            <div class="info">
-                <span>Drax Script - Best Of Them All</span>
-                <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/drax.lua'">Source</button>
-                <button onclick="window.location.href='https://www.loadstring.lol/scripts/dahood/draxloadstring.lua'">Loadstring</button>
-            </div>
-        </div>
-    </div>
-</div>
+    <script>
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            setTimeout(function() {
+                loadingScreen.classList.add('hidden');
+                document.body.style.overflow = ''; // Re-enable scrolling after loading screen hides
+            }, 2000); // Adjust the duration of the loading screen here
+        });
+    </script>
 
 </body>
 </html>

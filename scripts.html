@@ -72,8 +72,6 @@
     </style>
 </head>
 <body>
-
-    <div id="loading">getting scripts list...</div>
     <div id="main-title">loadstring.lol</div>
     <div class="search-bar" id="search-bar">
         <input type="text" id="search-input" placeholder="Search for a button...">
@@ -95,16 +93,6 @@
     </div>
 
     <script>
-        setTimeout(() => {
-            document.getElementById('loading').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('main-title').style.display = 'block'; // Show main title
-                document.getElementById('search-bar').style.display = 'block'; // Show search bar
-                document.getElementById('buttons').style.display = 'block'; // Show buttons
-            }, 1000);
-        }, 2000);
-
         document.getElementById('search-input').addEventListener('input', function() {
             var searchValue = this.value.toLowerCase();
             var buttons = document.querySelectorAll('.button-row a');

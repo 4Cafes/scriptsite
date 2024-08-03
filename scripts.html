@@ -19,9 +19,15 @@
             font-size: 4em;
             margin-bottom: 20px;
         }
-        .search-bar {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 80%;
             max-width: 600px;
+        }
+        .search-bar {
+            width: 100%;
             margin-bottom: 20px;
         }
         .search-bar input {
@@ -32,15 +38,16 @@
             border-radius: 5px;
             background-color: black;
             color: white;
+            margin-left: -14px;
         }
         .scroll-box {
-            width: 80%;
-            max-width: 600px;
+            width: 100%;
             height: 300px;
             overflow-y: auto;
             border: 2px solid #262626;
             padding: 10px;
-            background-color: black; /* Black background for the scroll box */
+            background-color: black;
+            margin-left: -5px;
         }
         .button-row {
             display: flex;
@@ -65,21 +72,23 @@
 </head>
 <body>
     <div id="main-title">loadstring.lol</div>
-    <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Search for a button...">
-    </div>
-    <div class="scroll-box" id="buttons">
-        <div class="button-row">
-            <a href="https://loadstring.lol/beeswarm" data-keyword="bee swarm simulator">Bee Swarm</a>
-            <a href="https://loadstring.lol/dahood" data-keyword="da hood">Da Hood</a>
-            <a href="https://loadstring.lol/erlc" data-keyword="erlc">ERLC</a>
-            <a href="https://loadstring.lol/hoodcustom" data-keyword="hood customs">Hood Customs</a>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for a button...">
         </div>
-        <div class="button-row">
-            <a href="https://loadstring.lol/universal" data-keyword="universal">Universal</a>
-            <a href="https://loadstring.lol/mm2" data-keyword="mm2">MM2</a>
-            <a href="https://loadstring.lol" data-keyword="soon">Soon!</a>
-            <a href="https://loadstring.lol" data-keyword="soon">Soon!</a>
+        <div class="scroll-box" id="buttons">
+            <div class="button-row">
+                <a href="https://loadstring.lol/beeswarm" data-keyword="bee swarm simulator">Bee Swarm</a>
+                <a href="https://loadstring.lol/dahood" data-keyword="da hood">Da Hood</a>
+                <a href="https://loadstring.lol/erlc" data-keyword="erlc">ERLC</a>
+                <a href="https://loadstring.lol/hoodcustom" data-keyword="hood customs">Hood Customs</a>
+            </div>
+            <div class="button-row">
+                <a href="https://loadstring.lol/universal" data-keyword="universal">Universal</a>
+                <a href="https://loadstring.lol/mm2" data-keyword="mm2">MM2</a>
+                <a href="https://loadstring.lol" data-keyword="soon">Soon!</a>
+                <a href="https://loadstring.lol" data-keyword="soon">Soon!</a>
+            </div>
         </div>
     </div>
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,196 +8,92 @@
     <style>
         body {
             background-color: black;
-            font-family: Arial, sans-serif;
             color: white;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevent scrolling while loading screen is visible */
-        }
-        .header-container {
-            position: fixed;
-            top: 0;
-            width: 99.6%;
-            background-color: black;
-            z-index: 10;
-        }
-        .header {
-            text-align: center;
-            padding: 5px;
-            font-size: 24px;
-        }
-        .slider {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            overflow-y: auto;
-            height: 80vh;
-            padding: 20px;
-            margin-top: 80px;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
         }
-        .row {
-            display: flex;
-            width: 100%;
+        #loading {
+            font-size: 3em;
+            position: absolute;
+            transition: opacity 1s;
+        }
+        #main-title, #non-pc-message {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: none; /* Initially hidden */
+        }
+        #buttons, #continue-button {
+            display: none;
+            flex-wrap: wrap;
             justify-content: center;
         }
-        .box {
-            width: 30%;
+        .button {
             background-color: #262626;
-            margin: 10px;
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Ensure content is spaced */
-        }
-        .box img {
-            width: 100%; /* Set width to 100% of the parent box */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 10px;
-            display: block;
-        }
-        .info {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Align items at the bottom */
-            align-items: center;
-            margin-top: 5px;
-        }
-        .info span {
-            font-size: 18px;
-            margin-bottom: 10px; /* Add some space between the text and the button */
-        }
-        .info button {
-            padding: 10px 20px;
-            background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em;
             cursor: pointer;
-            font-size: 16px;
         }
-        .info button:hover {
-            background-color: #0056b3;
-        }
-        /* Loading Screen Styles */
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
-            font-size: 3em;
-            transition: opacity 1s ease-out;
-        }
-        #loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none; /* Disable interaction with the loading screen */
+        audio {
+            display: none; /* Hide the audio player */
         }
     </style>
 </head>
 <body>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen">byfron bypasses incoming</div>
+    <audio id="background-music" autoplay loop>
+        <source src="web-index-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
 
-    <!-- Main Content -->
-    <div class="header-container">
-        <div class="header"><a href="https://loadstring.lol" style="color: white; text-decoration: none;">loadstring.lol</a></div>
+    <div id="loading">loadstring.lol</div>
+    <div id="main-title">loadstring.lol - early access</div>
+    <div id="buttons">
+        <button class="button" onclick="window.location.href='https://loadstring.lol/executor'">Executors</button>
+        <button class="button" onclick="window.location.href='https://loadstring.lol/scripts'">Scripts</button>
+        <button class="button" onclick="window.location.href='https://dc.gg/scripts'">Discord</button>
+        <button class="button" onclick="window.location.href='https://loadstring.lol/changelog'">Changelog</button>
+        <button class="button" onclick="window.location.href='https://cafes.lol'">cafes.lol</button>
     </div>
 
-    <div class="slider">
-        <div class="header">Executors - Free</div>
-        
-        <div class="row">
-            <div class="box">
-                <img src="https://loadstring.lol/pictures/executor/Screenshot%202024-07-12%20194220.png" alt="Showcase Image">
-                <div class="info">
-                    <span>Solara Executor - The Best - Keyless</span>
-                    <button onclick="window.location.href='https://discord.gg/realsolara'">Get</button>
-                </div>
-            </div>
-            <div class="box">
-                <img src="https://loadstring.lol/pictures/executor/Screenshot%202024-07-12%20194352%20(1).png" alt="Showcase Image">
-                <div class="info">
-                    <span>Wave Executor - Removed due to vulnerability - May come back</span>
-                    <button onclick="window.location.href=''">Get</button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="box">
-                <img src="https://loadstring.lol/pictures/executor/celery.jpg" alt="Showcase Image">
-                <div class="info">
-                    <span>Celery - Keyless</span>
-                    <button onclick="window.location.href='https://celery.zip/'">Get</button>
-                </div>
-            </div>
-            <div class="box">
-                <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
-                <div class="info">
-                    <span>Suggest a executor!</span>
-                    <button onclick="window.location.href='https://dc.gg/scripts'">Get</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="header">Externals - Free</div>
-        
-        <div class="row">
-            <div class="box">
-                <img src="https://loadstring.lol/pictures/executor/horizon.png" alt="Showcase Image">
-                <div class="info">
-                    <span>Horizon - OUT SOON! - Key</span>
-                    <button onclick="window.location.href=''">Get</button>
-                </div>
-            </div>
-            <div class="box">
-                <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
-                <div class="info">
-                    <span>Suggest a external!</span>
-                    <button onclick="window.location.href='https://dc.gg/scripts'">Get</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="header">Externals - Paid</div>
-        
-        <div class="row">
-            <div class="box">
-                <img src="https://loadstring.lol/pictures/executor/dx9ware" alt="Showcase Image">
-                <div class="info">
-                    <span>DX9WARE - Best External</span>
-                    <button onclick="window.location.href='https://cultofintellect.com/dx9ware/'">Get</button>
-                </div>
-            </div>
-            <div class="box">
-                <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
-                <div class="info">
-                    <span>Suggest a external!</span>
-                    <button onclick="window.location.href='https://dc.gg/scripts'">Get</button>
-                </div>
-            </div>
-        </div>
+    <div id="non-pc-message">Non-pc devices are not supported currently - If this is an error please click the button below to continue!</div>
+    <div id="continue-button">
+        <button class="button" onclick="showSite()">Continue</button>
     </div>
 
     <script>
-        window.addEventListener('load', function() {
-            var loadingScreen = document.getElementById('loading-screen');
-            setTimeout(function() {
-                loadingScreen.classList.add('hidden');
-                document.body.style.overflow = ''; // Re-enable scrolling after loading screen hides
-            }, 2000); // Adjust the duration of the loading screen here
-        });
-    </script>
+        function isNonPC() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return /mobile|tablet|ipad|iphone|android/.test(userAgent);
+        }
 
+        function showSite() {
+            document.getElementById('non-pc-message').style.display = 'none';
+            document.getElementById('continue-button').style.display = 'none';
+            document.getElementById('main-title').style.display = 'block'; // Show main title
+            document.getElementById('buttons').style.display = 'flex';
+        }
+
+        setTimeout(() => {
+            document.getElementById('loading').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                if (isNonPC()) {
+                    document.getElementById('non-pc-message').style.display = 'block';
+                    document.getElementById('continue-button').style.display = 'flex';
+                } else {
+                    document.getElementById('main-title').style.display = 'block'; // Show main title
+                    document.getElementById('buttons').style.display = 'flex';
+                }
+            }, 1000);
+        }, 2000);
+    </script>
+    
 </body>
 </html>

@@ -15,21 +15,14 @@
             margin: 0;
             flex-direction: column;
         }
-        #loading {
-            font-size: 4em;
-            position: absolute;
-            transition: opacity 1s;
-        }
         #main-title {
             font-size: 4em;
             margin-bottom: 20px;
-            display: none; /* Initially hidden */
         }
         .search-bar {
             width: 80%;
             max-width: 600px;
             margin-bottom: 20px;
-            display: none; /* Initially hidden */
         }
         .search-bar input {
             width: 100%;
@@ -48,7 +41,6 @@
             border: 2px solid #262626;
             padding: 10px;
             background-color: black; /* Black background for the scroll box */
-            display: none; /* Initially hidden */
         }
         .button-row {
             display: flex;
@@ -73,7 +65,7 @@
 </head>
 <body>
     <div id="main-title">loadstring.lol</div>
-    <div class="search-bar" id="search-bar">
+    <div class="search-bar">
         <input type="text" id="search-input" placeholder="Search for a button...">
     </div>
     <div class="scroll-box" id="buttons">
@@ -89,7 +81,6 @@
             <a href="https://loadstring.lol" data-keyword="soon">Soon!</a>
             <a href="https://loadstring.lol" data-keyword="soon">Soon!</a>
         </div>
-
     </div>
 
     <script>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loadstring.lol</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling while loading screen is visible */
+        }
+        .header-container {
+            position: fixed;
+            top: 0;
+            width: 99.6%;
+            background-color: black;
+            z-index: 10;
+        }
+        .header {
+            text-align: center;
+            padding: 5px;
+            font-size: 24px;
+        }
+        .slider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+            height: 80vh;
+            padding: 20px;
+            margin-top: 80px;
+        }
+        .row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        .box {
+            width: 30%;
+            background-color: #262626;
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Ensure content is spaced */
+        }
+        .box img {
+            width: 100%; /* Set width to 100% of the parent box */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            display: block;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Align items at the bottom */
+            align-items: center;
+            margin-top: 5px;
+        }
+        .info span {
+            font-size: 18px;
+            margin-bottom: 10px; /* Add some space between the text and the button */
+        }
+        .info button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px; /* Add some space between buttons if there are multiple */
+        }
+        .info button:hover {
+            background-color: #0056b3;
+        }
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            font-size: 3em;
+            transition: opacity 1s ease-out;
+        }
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none; /* Disable interaction with the loading screen */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">loading scripts for casino pet game</div>
+
+    <!-- Main Content -->
+    <div class="header-container">
+        <div class="header"><a href="https://loadstring.lol" style="color: white; text-decoration: none;">loadstring.lol</a></div>
+    </div>
+
+    <div class="slider">
+        <div class="header">PS99 Scripts - Free</div>
+        
+        <div class="row">
+            <div class="box">
+                <img src="https://loadstring.lol/pictures/ps99/ps99.jfif" alt="Showcase Image">
+                <div class="info">
+                    <span>6footscripts - Free - Farming Script</span>
+                    <button onclick="window.location.href='https://loadstring.lol/scripts/ps99/6ftscripts.lua'">Get</button>
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://loadstring.lol/submit.png" alt="Showcase Image">
+                <div class="info">
+                    <span>Submit a script! (Does not have to be this category this is in)</span>
+                    <button onclick="window.location.href='https://dc.gg/loadstring'">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            setTimeout(function() {
+                loadingScreen.classList.add('hidden');
+                document.body.style.overflow = ''; // Re-enable scrolling after loading screen hides
+            }, 2000); // Adjust the duration of the loading screen here
+        });
+    </script>
+
+</body>
+</html>
